@@ -52,14 +52,10 @@ int main(int argc, char *argv[])
     * void bcopy(char *s1, char *s2, int length)
     * which copies length bytes from s1 to s2. */
     memset(((char *) &serv_addr), 0, (sizeof(serv_addr)));
-    //bzero((char *) &serv_addr, sizeof(serv_addr));
     serv_addr.sin_family = AF_INET;
     memcpy(((char *)server->h_addr),
            ((char *)&serv_addr.sin_addr.s_addr),
            (server->h_length));
-    //bcopy((char *)server->h_addr, 
-    //     (char *)&serv_addr.sin_addr.s_addr,
-    //     server->h_length);
     serv_addr.sin_port = htons(portno);
 
    /* The connect function is called by the client to establish a connection to
@@ -73,15 +69,13 @@ int main(int argc, char *argv[])
    /* The last part prompts the user to enter a message, uses fgets to read the message
     * from stdin, writes the message to the socket, reads the reply from the
     * socket, and displays this reply on the screen. */
-    printf("Please enter the message: ");
+    printf("Please enter what you want to do (for instance: 3, 5, add): ");
     memset((buffer), 0, (256));
-    //bzero(buffer,256);
     fgets(buffer,255,stdin);
     n = write(sockfd,buffer,strlen(buffer));
     if (n < 0) 
          error("ERROR writing to socket");
     memset((buffer), 0, (256));
-    //bzero(buffer,256);
     n = read(sockfd,buffer,255);
     if (n < 0) 
          error("ERROR reading from socket");

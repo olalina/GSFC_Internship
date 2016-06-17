@@ -38,7 +38,7 @@ program main
   write ( *, '(a)' ) '  FORTRAN90 version'
   write ( *, '(a)' ) '  Demonstrate how a FORTRAN90 program can call'
   write ( *, '(a)' ) '  a C function to print a character string.'
-!
+
 !  It is probably acceptable to replace C_CHAR_"Hello World!"
 !  by just "Hello World!", but this is not actually guaranteed
 !  by the FORTRAN standard.
