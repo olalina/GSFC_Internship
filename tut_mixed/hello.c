@@ -9,7 +9,7 @@ void print_C ( char *text )
 
     PRINT_C prints a character string.
 
-  Licensing:
+  Licensing: Hej Erik
 
     This code is distributed under the GNU LGPL license.
 
